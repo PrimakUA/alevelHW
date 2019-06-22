@@ -2,7 +2,6 @@
 
 $fileSource = 'fileread.txt';
 $fileTarget = 'filewrite2.txt';
-бе бе бе
 
 $fileSourceData = readFileSource($fileSource);
 
