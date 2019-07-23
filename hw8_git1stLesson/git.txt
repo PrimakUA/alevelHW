@@ -1,0 +1,3 @@
+Задание, залить домашке на гитхаб или другой ресурс.
+
+https://github.com/PrimakUA/alevelHW
