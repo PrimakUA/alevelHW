@@ -1,0 +1,48 @@
+***********************************************************************************************************************
+Level 1
+Посчитать количество встречаемых слов Harry, Lord, Hogwarts в этой статье:
+
+curl -O https://en.wikipedia.org/wiki/site
+
+grep -o "\<Harry\>" site | wc -l
+grep -o "\<Lord\>" site | wc -l
+grep -o "\<Hogwarts\>" site | wc -l
+
+***********************************************************************************************************************
+Level 2
+Сделать файл с количеством встречаемых слов Harry, Lord, Hogwarts из статьи и указать строчки где встречаются эти слова в таком формате
+
+Harry: 100500 [1100, 200, 300]
+Lord : 200 [12, 15, 65]
+Hogwarts: 232 [14, 23, 66]
+
+
+chmod +x 2.sh
+./2.sh Harry list result.txt
+./2.sh Lord list result.txt
+./2.sh Hogwarts list result.txt
+
+#!/bin/bash
+
+input=$1
+inputFile=$2
+res=$3
+
+if [ ! -f "$inputFile" ]; then
+	echo "File $inputFile doesn't exist"
+	exit 1
+fi
+
+if [ ! -f "$res" ]; then
+	echo "File $output doesn't exist"
+	exit 1
+fi
+
+WORDS_NUMBER=`grep -o "\<$input\>" "$inputFile" | wc -l`
+LINES_NUMBER=`grep -n "\<$input\>" "$inputFile" | cut -f1 -d: | awk '{printf("%s", NR == 1 ? $0 : ", "$0);} END {printf("\n");}'`
+
+echo "$input: $WORDS_NUMBER [$LINES_NUMBER]" >> $res
+
+exit 0
+
+***********************************************************************************************************************
