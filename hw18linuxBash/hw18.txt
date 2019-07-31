@@ -2,11 +2,11 @@
 Level 1
 Посчитать количество встречаемых слов Harry, Lord, Hogwarts в этой статье:
 
-curl -O https://en.wikipedia.org/wiki/site
+curl -O https://en.wikipedia.org/wiki/Harry_Potter
 
-grep -o "\<Harry\>" site | wc -l
-grep -o "\<Lord\>" site | wc -l
-grep -o "\<Hogwarts\>" site | wc -l
+grep -o "\<Harry\>" Harry_Potter | wc -l
+grep -o "\<Lord\>" Harry_Potter | wc -l
+grep -o "\<Hogwarts\>" Harry_Potter | wc -l
 
 ***********************************************************************************************************************
 Level 2
@@ -18,9 +18,9 @@ Hogwarts: 232 [14, 23, 66]
 
 
 chmod +x 2.sh
-./2.sh Harry list result.txt
-./2.sh Lord list result.txt
-./2.sh Hogwarts list result.txt
+./2.sh Harry Harry_Potter result.txt
+./2.sh Lord Harry_Potter result.txt
+./2.sh Hogwarts Harry_Potter result.txt
 
 #!/bin/bash
 
