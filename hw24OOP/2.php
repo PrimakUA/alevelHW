@@ -1,51 +1,30 @@
 <?php
 
-abstract class Animal
+abstract class Transport
 {
-    public function doSound()
+    public function engineSound()
     {
-        echo '';
+        echo 'Engine sound is - ';
     }
 }
 
-class Dog extends Animal
+class Car extends Transport
 {
-    public function doSound()
+    public function engineSound()
     {
-        echo 'Gav gav. Grrrrr' . "<br>";
+        echo parent::engineSound() . 'brrrrrrrrr have a car' . '<br>';
     }
 }
 
-class Bird extends Animal
+class Motorcicle extends Transport
 {
-    public function doSound()
+    public function engineSound()
     {
-        echo 'Crrrrr crrrrrr' . "<br>";
+        echo parent::engineSound() . 'br br br br br have a motorbike' . '<br>';
     }
 }
 
-class Master extends Animal
-{
-    public function requestSound(Animal $animal)
-    {
-        return $animal->doSound();
-    }
-
-    public function doSound()
-    {
-        echo 'Kyky' . "<br>";
-    }
-}
-
-$dog = new Dog;
-$bird = new Bird;
-
-$me = new Master;
-
-$me->requestSound($bird);
-
-$me->requestSound($dog);
-
-$me->requestSound($me);
-
-$me->doSound();
+$car = new Car();
+$motorcicle = new Motorcicle();
+echo $car->engineSound();
+echo $motorcicle->engineSound();
