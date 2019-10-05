@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<!--<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+<section class="block">
+    <h2>Enter your nickname and message</h2>
+    <form class="login-form" method="post">
+        <p>
+            <input type="text" name="nickName" placeholder="Enter your Nickname!" >
+        </p>
+        <p>
+            <input type="text" name="message" placeholder="Enter message" onclick=''>
+        </p>
+
+        <button class="button" type="submit">Send</button>
+
+        <button class="button" id="get" type="button">get</button>
+
+        <div class="true-false" style="background-color: none" id="info-box"></div>
+        <div>
+            <table>
+
+            </table>
+        </div>
+    </form>
+</section>
+<script src="chat.js"></script>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--	<meta charset="utf-8" />-->
+<!--	<meta name="viewport" content="width=device-width" />-->
+<!--	<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<input type='text' id='url' /><button id='download'>Download</button>-->
+<!--<div id='container'>-->
+<!--</div>-->
+<!--<script>-->
+<!--	function showTable(domElement, data){-->
+<!--		domElement.innerHTML = ''-->
+<!--		let tbl = document.createElement('table')-->
+
+<!--		for (let [key, value] of Object.entries(data)){-->
+<!--			let tr = document.createElement('tr')-->
+<!--			let th = document.createElement('th')-->
+<!--			let td = document.createElement('td')-->
+<!--			tr.appendChild(th)-->
+<!--			tr.appendChild(td)-->
+
+<!--			th.innerHTML = key-->
+<!--			if (value && typeof value === 'object'){-->
+<!--				showTable(td, value)-->
+<!--			}-->
+<!--			else {-->
+<!--				td.innerHTML = value-->
+<!--				if (typeof value === 'string' && value.startsWith('https://swapi.co/api/')){-->
+<!--					td.onclick   = () => {-->
+<!--						url.value = value-->
+<!--						download.onclick()-->
+<!--					}-->
+<!--				}-->
+<!--			}-->
+
+<!--			tbl.appendChild(tr)-->
+<!--		}-->
+
+<!--		domElement.appendChild(tbl)-->
+<!--		console.log('ПОКА')-->
+<!--	}-->
+
+<!--	download.onclick = async () => {-->
+<!--		let response = await fetch(url.value)-->
+<!--		let data     = await response.json()-->
+
+<!--		showTable(container, data)-->
+<!--		console.log(data)-->
+<!--	}-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
